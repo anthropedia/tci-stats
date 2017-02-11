@@ -1,6 +1,6 @@
 from unittest import TestCase
 
-from stats import cronbach_alpha
+from tcistats import cronbach_alpha
 
 
 class StatsTest(TestCase):
