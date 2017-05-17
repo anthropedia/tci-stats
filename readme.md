@@ -17,10 +17,17 @@ for further usage examples.
 
     python3 -m venv venv
     source venv/bin/activate
-    pip install -r requirements.txt
+    pip install .
 
 
 ## Running tests
 
     source venv/bin/activate
     pyhton3 -m unittest
+
+
+## Using in application
+
+    from tcistats import cronbach_alpha
+    alphas = cronbach_alpha(my_items)
+    print('Cronbach alpha results: ', alphas)

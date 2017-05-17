@@ -1,10 +1,11 @@
-import numpy
+import pandas
 
 
-def cronbach_alpha(scores):
-    scores = numpy.asarray(scores)
-    itemvars = scores.var(axis=1, ddof=1)
-    total = scores.sum(axis=0)
-    nitems = len(scores)
-    alpha = nitems / (nitems-1.) * (1 - itemvars.sum() / total.var(ddof=1))
-    return round(alpha, 10)
+def cronbach_alpha(items):
+    items = pandas.DataFrame(items)
+    items_count = items.shape[1]
+    variance_sum = float(items.var(axis=0, ddof=1).sum())
+    total_var = float(items.sum(axis=1).var(ddof=1))
+    
+    return (items_count / float(items_count - 1) *
+            (1 - variance_sum / total_var))
