@@ -7,5 +7,5 @@ setup(
     author='Vincent Agnano',
     license='Copyright Anthropedia',
     long_description=open('readme.md').read(),
-    install_requires=['pandas<=0.21'],
+    install_requires=['pandas'],
 )
